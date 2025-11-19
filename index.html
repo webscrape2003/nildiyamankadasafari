@@ -15,14 +15,34 @@
   <!-- Local CSS -->
   <link rel="stylesheet" href="style.css" />
 
-  <!-- FIX: SMALL IMAGE PREVIEW -->
+  <!-- FIX: SMALL IMAGE PREVIEW FOR ALL CARDS -->
   <style>
+    /* Bootstrap news card images */
     .card-img-top {
-      height: 150px;      /* small preview */
-      object-fit: cover;  /* crop nicely */
+      height: 150px;
+      object-fit: cover;
       border-radius: 6px;
     }
+
+    /* Template card images */
+    #template-news-card img {
+      height: 150px !important;
+      width: 100%;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+
+    /* Optional styling for template card layout */
+    .card-header {
+      padding: 0;
+      border-bottom: none;
+    }
+
+    .card-content {
+      padding: 15px;
+    }
   </style>
+
 </head>
 
 <body>
@@ -37,6 +57,7 @@
       </button>
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
             <a class="nav-link active">Home</a>
@@ -72,12 +93,7 @@
 
     <!-- CARD 1 -->
     <div class="card news-card mb-4">
-      <!-- <img src="https://i.ibb.co/CKZGznp9/DSC-8372.jpg" class="card-img-top" alt="news img">-->
-
-         <div class="card-header">
-                <img src="https://i.ibb.co/CKZGznp9/DSC-8372.jpg" alt="" id="news-img">
-            </div>
-      
+      <img src="https://i.ibb.co/CKZGznp9/DSC-8372.jpg" class="card-img-top" alt="news img">
       <div class="card-body">
         <h5 class="card-title">Another News Example</h5>
         <p class="card-text">
@@ -87,9 +103,38 @@
       </div>
     </div>
 
-
+    <!-- CARD 2 -->
+    <div class="card news-card mb-4">
+      <img src="https://i.ibb.co/CKZGznp9/DSC-8372.jpg" class="card-img-top" alt="news img">
+      <div class="card-body">
+        <h5 class="card-title">Another News Example</h5>
+        <p class="card-text">
+          You can replace this sample content with your own news text, images, or categories.
+        </p>
+        <a class="btn btn-primary">Read more</a>
+      </div>
+    </div>
 
   </div>
+
+
+  <!-- TEMPLATE NEWS CARD (ADDED + FIXED IMAGE) -->
+  <template id="template-news-card">
+    <div class="card mb-4">
+      <div class="card-header">
+        <img src="https://via.placeholder.com/400x200" alt="" id="news-img">
+      </div>
+      <div class="card-content">
+        <h3 id="news-title">This is the Title</h3>
+        <h6 class="news-source" id="news-source">constGenius 02/02/2024</h6>
+        <p class="news-desc" id="news-desc">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem incidunt ratione, dolore beatae quaerat 
+          voluptatum autem fugit voluptas minima eligendi.
+        </p>
+      </div>
+    </div>
+  </template>
+
 
   <!-- FOOTER -->
   <footer class="flex-shrink-0 py-2 bg-dark text-white-50 mt-5">
@@ -100,7 +145,7 @@
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 
 </html>
-
